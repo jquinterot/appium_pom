@@ -1,20 +1,22 @@
 describe('Locating elements on Android :D', () => {
     it.only('Find element by  accesibility id', async () => {
-        const appOption = await $('~Clicks');
+        //Accessibility Id
+        
+        const appOption = $('~App');
+        //Xpath
+        const alertDialogButton = $('//android.widget.TextView[@content-desc="Alert Dialogs"]');
+
+        //By Resource Id
+        const listDialog = $('//android.widget.Button[@resource-id="io.appium.android.apis:id/select_button"]');
+
+        //Xpath
+        const dropdownOption = $('//android.widget.TextView[@text="Command two"]');
+
         await appOption.click();
-    })
-
-    it('Find element by class name', async () => {
-        //Find the first element with class TextView
-        const className = await $('android.widget.TextView');
-        console.log(await className.getText());
-        await expect(className).toHaveText('Counter Clicks');
-    })
-
-    it('Find element by xpath', async () => {
-        //Find the first element with class TextView
-        const counterLabel = await $('//android.view.View[@content-desc="0"]');
-        console.log(await counterLabel.getText());
-        await expect(className).toHaveText(0);
+        await alertDialogButton.click();
+        await listDialog.click();
+        await dropdownOption.click();
+        const textAssertion = await $('//android.widget.TextView')
+        await expect(textAssertion).toHaveText("You selected: 1 , Command two");
     })
 })

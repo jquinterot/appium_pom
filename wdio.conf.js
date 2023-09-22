@@ -47,7 +47,7 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 10,
+    maxInstances: 1,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -59,7 +59,7 @@ exports.config = {
         'appium:deviceName': 'S23 Ultra API 33', // or "iPhone Simulator"
         'appium:platformVersion': '13.0', // or "16.2" (for running iOS v16)
         'appium:automationName': 'UiAutomator2', // or "XCUITest"
-        'appium:app': 'C:\\Projects\\appium\\webdriverio-appium-v8\\app\\android\\app-debug.apk',
+        'appium:app': 'C:\\Projects\\appium\\webdriverio-appium-v8\\app\\android\\ApiDemos-debug.apk',
     }],
     //
     // ===================
