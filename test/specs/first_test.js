@@ -1,7 +1,7 @@
 describe('Locating elements on Android :D', () => {
-    it.only('Find element by  accesibility id', async () => {
+    it.only('Find element by  accesibility id, xpath and resource Id', async () => {
         //Accessibility Id
-        
+
         const appOption = $('~App');
         //Xpath
         const alertDialogButton = $('//android.widget.TextView[@content-desc="Alert Dialogs"]');
@@ -16,7 +16,7 @@ describe('Locating elements on Android :D', () => {
         await alertDialogButton.click();
         await listDialog.click();
         await dropdownOption.click();
-        const textAssertion = await $('//android.widget.TextView')
-        await expect(textAssertion).toHaveText("You selected: 1 , Command two");
+        const textAssertion = $('//android.widget.TextView')
+        await expect(await textAssertion).toHaveText("You selected: 1 , Command two");
     })
 })
